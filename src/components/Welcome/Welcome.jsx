@@ -1,0 +1,34 @@
+import React from "react";
+import { ClickableTile } from "carbon-components-react";
+
+const Welcome = () => {
+  return (
+    <>
+      <div className="bx--grid">
+        <div className="bx--row">
+          <div className="bx--col">
+            <p>
+              This tool is used for generating mapping file for `STIX-Shifter`
+              project
+            </p>
+          </div>
+        </div>
+
+        <div className="bx--row">
+          <div className="bx--col-sm-2">
+            <ClickableTile href={"/from_stix"}>
+              Generate "From STIX" File
+            </ClickableTile>
+          </div>
+          <div className="bx--col-sm-2">
+            <ClickableTile href={"/to_stix"}>
+              Generate "To STIX" File
+            </ClickableTile>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Welcome;

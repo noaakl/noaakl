@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { Content } from "carbon-components-react";
+import "./App.scss";
+
+import Header from "./components/Header";
+import Welcome from "./components/Welcome/Welcome";
+import FromSTIX from "./components/FromSTIX";
+import ToSTIX from "./components/ToSTIX";
+import About from "./components/About";
+import store from "./store/store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Content>
+          <Switch>
+            <Route path="/from_stix">
+              <FromSTIX />
+            </Route>
+            <Route path="/to_stix">
+              <ToSTIX />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Welcome />
+            </Route>
+          </Switch>
+        </Content>
+      </Router>
+    </Provider>
   );
 }
 
