@@ -9,7 +9,7 @@ const Mapping = () => {
     <>
       <div className="bx--row">
         <div className="bx--col">
-          <h4 className="section-title">Mapping</h4>
+          <h4 className="section-title">(2) Apply Mappings</h4>
         </div>
       </div>
 
@@ -19,7 +19,7 @@ const Mapping = () => {
         >
           <ul>
             {Object.keys(mapping).map((o) => (
-              <MappingItem title={o} />
+              <MappingItem key={o} title={o} />
             ))}
           </ul>
         </div>

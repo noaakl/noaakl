@@ -1,8 +1,4 @@
 import React from "react";
-import { TextInput, Button } from "carbon-components-react";
-import { Save16 } from "@carbon/icons-react";
-import styles from "./from_stix.module.scss";
-
 import AddFields from "./AddFields";
 import Mapping from "./Mapping";
 import Export from "./Export";

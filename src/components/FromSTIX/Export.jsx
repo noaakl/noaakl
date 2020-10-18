@@ -1,14 +1,19 @@
-import React from "react";
-import styles from "./from_stix.module.scss";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Button, TextInput } from "carbon-components-react";
 import { Save16 } from "@carbon/icons-react";
+import { saveJsonToDisk, stateMappingToShifterMapping } from "./utils";
+
+import styles from "./from_stix.module.scss";
 
 const Export = () => {
+  const [exportFilename, setExportFilename] = useState("");
+  const mapping = useSelector((state) => state.fromStix.mapping);
   return (
     <>
       <div className="bx--row">
         <div className="bx--col">
-          <h4 className="section-title">Export</h4>
+          <h4 className="section-title">(3) Export</h4>
         </div>
       </div>
 
@@ -18,12 +23,31 @@ const Export = () => {
         >
           <div className="bx--row" style={{ marginBottom: ".5rem" }}>
             <div className="bx--col">
-              <TextInput id={"filename"} labelText={"Filename"} />
+              <TextInput
+                autoComplete={"off"}
+                id={"export-filename"}
+                labelText={"Filename"}
+                value={exportFilename}
+                onChange={(input) => {
+                  setExportFilename(input.target.value);
+                }}
+              />
             </div>
           </div>
           <div className="bx--row">
             <div className="bx--col" style={{ textAlign: "right" }}>
-              <Button renderIcon={Save16}>Save</Button>
+              <Button
+                disabled={exportFilename.length === 0}
+                renderIcon={Save16}
+                onClick={() => {
+                  saveJsonToDisk(
+                    `${exportFilename}.json`,
+                    stateMappingToShifterMapping(mapping)
+                  );
+                }}
+              >
+                Save
+              </Button>
             </div>
           </div>
         </div>

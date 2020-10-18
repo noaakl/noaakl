@@ -1,6 +1,8 @@
 import React from "react";
 import { ClickableTile } from "carbon-components-react";
 
+import styles from "./welcome.module.scss";
+
 const Welcome = () => {
   return (
     <>
@@ -16,12 +18,12 @@ const Welcome = () => {
 
         <div className="bx--row">
           <div className="bx--col-sm-2">
-            <ClickableTile href={"/from_stix"}>
+            <ClickableTile className={styles.tile__btn} href={"/from_stix"}>
               Generate "From STIX" File
             </ClickableTile>
           </div>
           <div className="bx--col-sm-2">
-            <ClickableTile href={"/to_stix"}>
+            <ClickableTile className={styles.tile__btn} href={"/to_stix"}>
               Generate "To STIX" File
             </ClickableTile>
           </div>

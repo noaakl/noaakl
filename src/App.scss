@@ -1,22 +1,21 @@
+@import "@carbon/layout/scss/layout";
+@import "@carbon/type/scss/styles";
+@import "@carbon/colors/scss/colors";
+
 body {
-  background-color: #f4f4f4;
+  background-color: $carbon--gray-10;
 }
 
 .bx--content {
-  background-color: #f4f4f4;
+  background-color: $carbon--gray-10;
 }
 
 .page-title {
-  font-size: 1.75rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  margin-bottom: 1rem;
+  @include carbon--type-style("productive-heading-04");
+  margin-bottom: $spacing-04;
 }
 
 .section-title {
-  font-size: 0.875rem;
-  line-height: 1.125em;
-  font-weight: 600;
-  letter-spacing: 0;
-  margin-bottom: 0.5rem;
+  @include carbon--type-style("productive-heading-01");
+  margin-bottom: $spacing-03;
 }

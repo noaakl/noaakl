@@ -1077,6 +1077,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@carbon/colors@^10.14.0":
+  version "10.14.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.14.0.tgz#daf40ec57ff28d7ade9f245ba5fdff08c7f890ce"
+  integrity sha512-BxmiXJxv+wULW0OA2SL2fz3aYlIKQ/BqU9Bb4ji/o+K2k4yjFYPLYRZuzR88tx79kipTOwPomY1mPYMbvK3kBQ==
+
 "@carbon/icon-helpers@10.2.0":
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.2.0.tgz#f58ab1d14b8b63d485d31e7d785d25057eac5409"
@@ -1101,6 +1106,24 @@
   integrity sha512-pbAegbVe5geqmz36W//y99W4DV+WRyBvL/3733AgZ4vPuXKLrK9exOUp7C1O/NPWrxIhOppMc3QZRWuicMU31g==
   dependencies:
     "@carbon/icon-helpers" "^10.9.0"
+
+"@carbon/import-once@^10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@carbon/import-once/-/import-once-10.3.0.tgz#58617da4efb6d7a11352d8e6b7209da1d39f364d"
+  integrity sha512-PFk3FhMe3psihYtCg3JsyPHismqglnbUqIpz1DCG5Gn/kt0HdVKhGvHdEq7E305rGoBUCKzMn/4xoY9v9mcmlg==
+
+"@carbon/layout@^10.13.0":
+  version "10.13.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.13.0.tgz#fd7ecaf1502f4d4ef1598816d9316dd6c84be5da"
+  integrity sha512-OgLe9/27zffC019rOGjWd4lavZO7BAkgUyKG+0Mg8IpzqqmGt7v8k4viMH5ThMt8y7Qk1LQfno/4ZzBItWi5Ow==
+
+"@carbon/type@^10.16.0":
+  version "10.16.0"
+  resolved "https://registry.yarnpkg.com/@carbon/type/-/type-10.16.0.tgz#0f85209852f5c1a0e0128b7408d9c71e588a4ca7"
+  integrity sha512-Qf2TfUJTFFcrCyFT9sH9wsETAVHKPGID0e3k9KjGrBjvbgeqny1jPHM7B7Gpl29NtOVDY2+K7AvGiBIH7SP/jQ==
+  dependencies:
+    "@carbon/import-once" "^10.3.0"
+    "@carbon/layout" "^10.13.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -2874,9 +2897,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001035:
-  version "1.0.30001035"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001035.tgz#2bb53b8aa4716b2ed08e088d4dc816a5fe089a1e"
-  integrity sha512-C1ZxgkuA4/bUEdMbU5WrGY4+UhMFFiXrgNAfxiMIqWgFTWfv/xsZCS2xEHT2LMq7xAZfuAnu6mcqyDl0ZR6wLQ==
+  version "1.0.30001148"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001148.tgz"
+  integrity sha512-E66qcd0KMKZHNJQt9hiLZGE3J4zuTqE1OnU53miEVtylFbwOEmeA5OsRu90noZful+XGSQOni1aT2tiqu/9yYw==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -4663,6 +4686,11 @@ file-loader@4.3.0:
   dependencies:
     loader-utils "^1.2.3"
     schema-utils "^2.5.0"
+
+file-saver@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.2.tgz#06d6e728a9ea2df2cce2f8d9e84dfcdc338ec17a"
+  integrity sha512-Wz3c3XQ5xroCxd1G8b7yL0Ehkf0TC9oYC6buPFkNnU9EnaPlifeAFCyCh+iewXTyFRcg0a6j3J7FmJsIhlhBdw==
 
 file-uri-to-path@1.0.0:
   version "1.0.0"
@@ -11011,6 +11039,11 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
+  integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"

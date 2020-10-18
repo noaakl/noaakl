@@ -12,12 +12,13 @@ const AddFieldItems = ({ title, type, items }) => {
       <ul>
         {items.map((item) => (
           <li
+            key={item.name}
             onClick={() => {
-              dispatch(addField(type, item));
+              dispatch(addField(type, item.name));
             }}
             className={styles.field__item}
           >
-            {item}
+            {item.name} {item.required ? "(*)" : ""}
           </li>
         ))}
       </ul>
