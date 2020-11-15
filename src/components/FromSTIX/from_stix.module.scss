@@ -46,5 +46,14 @@
 }
 
 .export__col {
-  background-color: #ffffff;
+  background-color: $carbon--white-0;
+  padding: $spacing-05;
+}
+
+.import__col {
+  background-color: $carbon--white-0;
+  padding: {
+    top: $spacing-03;
+    bottom: $spacing-01;
+  }
 }

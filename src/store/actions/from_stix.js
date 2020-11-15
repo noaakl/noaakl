@@ -3,6 +3,8 @@ export const DELETE_FIELD = "DELETE_FIELD";
 export const ADD_VALUE = "ADD_VALUE";
 export const UPDATE_VALUE = "UPDATE_VALUE";
 export const DELETE_VALUE = "DELETE_VALUE";
+export const UPDATE_SEARCH_FIELD_VALUE = "UPDATE_SEARCH_FIELD_VALUE";
+export const UPDATE_MAPPINGS_FROM_FILE = "UPDATE_MAPPINGS_FROM_FILE";
 
 export function addField(type, key) {
   return {
@@ -49,6 +51,24 @@ export function updateValue(field, id, value) {
       field,
       id,
       value,
+    },
+  };
+}
+
+export function updateSearchFieldValue(value) {
+  return {
+    type: UPDATE_SEARCH_FIELD_VALUE,
+    payload: {
+      value,
+    },
+  };
+}
+
+export function updateMappingsFromFile(mappings) {
+  return {
+    type: UPDATE_MAPPINGS_FROM_FILE,
+    payload: {
+      mappings,
     },
   };
 }

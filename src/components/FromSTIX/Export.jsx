@@ -13,15 +13,13 @@ const Export = () => {
     <>
       <div className="bx--row">
         <div className="bx--col">
-          <h4 className="section-title">(3) Export</h4>
+          <h4 className="section-title">Save Configuration</h4>
         </div>
       </div>
 
-      <div className="bx--row">
-        <div
-          className={`bx--col ${styles.full_height__col} ${styles.export__col}`}
-        >
-          <div className="bx--row" style={{ marginBottom: ".5rem" }}>
+      <div className="bx--row" style={{ marginBottom: ".75rem" }}>
+        <div className={`bx--col ${styles.export__col}`}>
+          <div className="bx--row">
             <div className="bx--col">
               <TextInput
                 autoComplete={"off"}

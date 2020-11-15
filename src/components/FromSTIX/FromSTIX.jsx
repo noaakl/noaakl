@@ -2,6 +2,7 @@ import React from "react";
 import AddFields from "./AddFields";
 import Mapping from "./Mapping";
 import Export from "./Export";
+import Import from "./Import";
 
 const FromSTIX = () => {
   return (
@@ -22,7 +23,17 @@ const FromSTIX = () => {
         </div>
 
         <div className="bx--col-sm-1">
-          <Export />
+          <div className="bx--row">
+            <div className="bx--col-sm-4">
+              <Export />
+            </div>
+          </div>
+
+          <div className="bx--row">
+            <div className="bx--col-sm-4">
+              <Import />
+            </div>
+          </div>
         </div>
       </div>
     </div>

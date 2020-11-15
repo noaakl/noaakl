@@ -9,7 +9,7 @@ const Mapping = () => {
     <>
       <div className="bx--row">
         <div className="bx--col">
-          <h4 className="section-title">(2) Apply Mappings</h4>
+          <h4 className="section-title">Mappings</h4>
         </div>
       </div>
 
