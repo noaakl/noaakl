@@ -3,7 +3,10 @@ import { FileUploader } from "carbon-components-react";
 import styles from "./from_stix.module.scss";
 import { loadJsonFromDisk } from "./utils";
 import { useDispatch } from "react-redux";
-import { updateMappingsFromFile } from "../../store/actions/from_stix";
+import {
+  updateMappingsFromFile,
+  clearMappings,
+} from "../../store/actions/from_stix";
 
 const Import = () => {
   const dispatch = useDispatch();
@@ -25,6 +28,9 @@ const Import = () => {
                 buttonLabel="Load file"
                 filenameStatus="edit"
                 multiple={false}
+                onDelete={() => {
+                  dispatch(clearMappings());
+                }}
                 onChange={(event) => {
                   let reader = new FileReader();
                   reader.onload = (_event) => {

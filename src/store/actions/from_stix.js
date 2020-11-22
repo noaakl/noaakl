@@ -5,6 +5,9 @@ export const UPDATE_VALUE = "UPDATE_VALUE";
 export const DELETE_VALUE = "DELETE_VALUE";
 export const UPDATE_SEARCH_FIELD_VALUE = "UPDATE_SEARCH_FIELD_VALUE";
 export const UPDATE_MAPPINGS_FROM_FILE = "UPDATE_MAPPINGS_FROM_FILE";
+export const UPDATE_MAPPINGS_FILTER_FIELD_VALUE =
+  "UPDATE_MAPPINGS_FILTER_FIELD_VALUE";
+export const CLEAR_MAPPINGS = "CLEAR_MAPPINGS";
 
 export function addField(type, key) {
   return {
@@ -64,11 +67,26 @@ export function updateSearchFieldValue(value) {
   };
 }
 
+export function updateMappingsFilterFieldValue(value) {
+  return {
+    type: UPDATE_MAPPINGS_FILTER_FIELD_VALUE,
+    payload: {
+      value,
+    },
+  };
+}
+
 export function updateMappingsFromFile(mappings) {
   return {
     type: UPDATE_MAPPINGS_FROM_FILE,
     payload: {
       mappings,
     },
+  };
+}
+
+export function clearMappings() {
+  return {
+    type: CLEAR_MAPPINGS,
   };
 }

@@ -55,3 +55,14 @@ export function filterFieldsForValue(fields, value) {
   );
   return filteredFields;
 }
+
+export function filterMappingFieldsForValue(mappings, value) {
+  if (!value || value === "") return mappings;
+  const lowerCaseValue = value.toLowerCase();
+  return Object.keys(mappings)
+    .filter((category) => category.toLowerCase().includes(lowerCaseValue))
+    .reduce((obj, key) => {
+      obj[key] = mappings[key];
+      return obj;
+    }, {});
+}

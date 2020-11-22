@@ -23,6 +23,15 @@
   }
 }
 
+.mappings_clear__btn {
+  @include carbon--type-style("helper-text-01");
+  color: $carbon--blue-70;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .mapping__col {
   .mapping__item {
     padding: $spacing-05 $spacing-05;

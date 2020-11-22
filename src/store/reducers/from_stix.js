@@ -7,6 +7,8 @@ import {
   UPDATE_SEARCH_FIELD_VALUE,
   UPDATE_VALUE,
   UPDATE_MAPPINGS_FROM_FILE,
+  UPDATE_MAPPINGS_FILTER_FIELD_VALUE,
+  CLEAR_MAPPINGS,
 } from "../actions/from_stix";
 import stixLanguageV2 from "../../global/stixLangV2";
 import { filterFieldsForValue } from "../../components/FromSTIX/utils";
@@ -15,6 +17,7 @@ const INITIAL_STATE = {
   mapping: {},
   stixFields: stixLanguageV2,
   fieldSearch: "",
+  fieldMappingFilter: "",
 };
 
 const FromSTIXReducer = (state = INITIAL_STATE, action) => {
@@ -99,10 +102,24 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
       };
     }
 
+    case UPDATE_MAPPINGS_FILTER_FIELD_VALUE: {
+      return {
+        ...state,
+        fieldMappingFilter: action.payload.value,
+      };
+    }
+
     case UPDATE_MAPPINGS_FROM_FILE: {
       return {
         ...state,
         mapping: action.payload.mappings,
+      };
+    }
+
+    case CLEAR_MAPPINGS: {
+      return {
+        ...state,
+        mapping: {},
       };
     }
 
