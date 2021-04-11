@@ -24,3 +24,11 @@ MMS is a static client side app, there is no backend involved, except from servi
 
 ### Authors
 - [Bar Haim](https://github.com/barvhaim)
+
+### Licensing
+
+map-my-shifter is licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/barvhaim/map-my-shifter/blob/master/LICENSE) for the full license text.
+
+
+Built with <3 from
+[IBM Cyber Security Center of Excellence (CCoE)](https://www.research.ibm.com/haifa/ccoe/)
