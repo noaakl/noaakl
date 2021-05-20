@@ -3,7 +3,7 @@ import {Accordion, AccordionItem} from "carbon-components-react";
 const About = () => {
   return<div>
       <img src="https://user-images.githubusercontent.com/16198896/114301821-0653e000-9acf-11eb-923d-baeec7ba80dc.png" alt="new"/>
-      <h1> map-my-shifter </h1>
+      <h1>map-my-shifter</h1>
       <h3>STIX-Shifter Connector's Mapping Builder</h3>
       <Accordion>
 
@@ -15,7 +15,7 @@ const About = () => {
                   <a href={"https://github.com/opencybersecurityalliance/stix-shifter/blob/master/adapter-guide/develop-translation-module.md#step-2-edit-the-from_stix_map-json-files"}>Read more...</a>
               </p>
               <p>
-                  - To STIX object mapping - When results object is back from the data source, this object should be displayed in the final results as STIX object. For examples "filename": "xxxxx"}  should be translated to STIX object of type `file`.
+                  - To STIX object mapping - When results object is back from the data source, this object should be displayed in the final results as STIX object. For examples {'{'}"filename": "xxxxx"}  should be translated to STIX object of type `file`.
                   <a href={"https://github.com/opencybersecurityalliance/stix-shifter/blob/master/adapter-guide/develop-translation-module.md#step-4-edit-the-to_stix_map-json-file"}>Read more...</a>
               </p>
           </AccordionItem>
@@ -32,28 +32,6 @@ const About = () => {
                   - Load existing mapping file, edit the file and save it to a new file.
               </p>
           </AccordionItem>
-          <AccordionItem title="Demo version">
-              <p>
-                  <a href={"https://barvhaim.github.io/map-my-shifter/"}>https://barvhaim.github.io/map-my-shifter/</a>
-              </p>
-
-          </AccordionItem>
-          <AccordionItem title="Running locally">
-              <p>
-                  1. Make sure to install required packages using `yarn install` command in the project root folder.
-              </p>
-              <p>
-                  2. `yarn start` runs the app in development mode. Open http://localhost:3000 to view it in the browser. The page will automatically reload if you make changes to the code. You will see the build errors and lint warnings in the console.
-              </p>
-          </AccordionItem>
-          <AccordionItem title="Building the project for deployment">
-              <p>
-                  1. `yarn build` builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
-              </p>
-              <p>
-                  2. Your app is ready to be deployed.
-              </p>
-          </AccordionItem>
           <AccordionItem title="Authors">
               <p>
                   <a href={"https://github.com/barvhaim"}>Bar Haim</a>
@@ -68,7 +46,7 @@ const About = () => {
               </p>
           </AccordionItem>
       </Accordion>
-      <p></p>
+
       Built with ❤️ from <a href={"https://www.research.ibm.com/haifa/ccoe/"}>IBM Cyber Security Center of Excellence (CCoE)</a>
   </div>;
 };
