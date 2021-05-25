@@ -11,13 +11,7 @@ const AddFieldItems = ({ title, type, items }) => {
     <AccordionItem title={title}>
       <ul>
         {items.map((item) => (
-          <li
-            key={item.name}
-            onClick={() => {
-              dispatch(addField(type, item.name));
-            }}
-            className={styles.field__item}
-          >
+          <li key={item.name} onClick={() => {dispatch(addField(type, item.name));}} className={styles.field__item}>
             {item.name} {item.required ? "(*)" : ""}
           </li>
         ))}

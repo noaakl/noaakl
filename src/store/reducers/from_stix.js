@@ -9,15 +9,17 @@ import {
   UPDATE_MAPPINGS_FROM_FILE,
   UPDATE_MAPPINGS_FILTER_FIELD_VALUE,
   CLEAR_MAPPINGS,
+  CHANGE_STIX_VERSION,
 } from "../actions/from_stix";
 import stixLanguageV2 from "../../global/stixLangV2";
-import { filterFieldsForValue } from "../../components/FromSTIX/utils";
+import { filterFieldsForValue, updateVersionOfStix } from "../../components/FromSTIX/utils";
 
 const INITIAL_STATE = {
   mapping: {},
   stixFields: stixLanguageV2,
   fieldSearch: "",
   fieldMappingFilter: "",
+  num:0,
 };
 
 const FromSTIXReducer = (state = INITIAL_STATE, action) => {
@@ -120,6 +122,13 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         mapping: {},
+      };
+    }
+    case CHANGE_STIX_VERSION:{
+      return{
+        ...state,
+        stixFields: updateVersionOfStix(action.payload.number),
+
       };
     }
 

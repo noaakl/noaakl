@@ -1,5 +1,7 @@
 import { saveAs } from "file-saver";
 import { v4 as uuidv4 } from "uuid";
+import stixLangV2 from "../../global/stixLangV2";
+import stixLangV2_1 from "../../global/stixLangV2_1";
 
 export function stateMappingToShifterMapping(stateMapping) {
   let output = {};
@@ -65,4 +67,12 @@ export function filterMappingFieldsForValue(mappings, value) {
       obj[key] = mappings[key];
       return obj;
     }, {});
+}
+
+export function updateVersionOfStix(num){
+  let version = stixLangV2;
+  if(num==1){
+    let version = stixLangV2_1;
+  }
+  return version;
 }
