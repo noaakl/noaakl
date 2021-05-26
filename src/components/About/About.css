@@ -1,16 +1,20 @@
-.firstUl li {
+.first-ul li {
     margin-bottom: 15px;
     padding-left: 30px;
     margin-top: 15px;
 
 }
 
-.secondUl li {
+.second-ul li {
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
-.firstP {
+.first-p {
     margin-top: 15px;
+}
+
+.heart {
+    color: red;
 }
 
