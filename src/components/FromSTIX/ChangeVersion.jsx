@@ -20,6 +20,7 @@ const itemstest = [
 
 const ChangeVersion = (props) => {
     const dispatch = useDispatch();
+    const stixVersion = useSelector((state) => state.fromStix.stixFields);
     return (
         <div>
         <Dropdown
@@ -29,8 +30,7 @@ const ChangeVersion = (props) => {
             id="carbon-dropdown-version-of-stix"
             titleText=""
             items={itemstest}
-
-            onChange={(event) => {dispatch(changeStixVersion(event.selectedItem.id)); props.setField(event.selectedItem.id===1? stixLangV2_1: stixLangV2)}}
+            onChange={(event) => {dispatch(changeStixVersion(event.selectedItem.id));/*{console.log(stixVersion)}; */props.setField(event.selectedItem.id===1? stixLangV2_1: stixLangV2)}}
 
         />
 

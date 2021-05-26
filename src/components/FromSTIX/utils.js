@@ -71,8 +71,9 @@ export function filterMappingFieldsForValue(mappings, value) {
 
 export function updateVersionOfStix(num){
   let version = stixLangV2;
-  if(num==1){
+  if(num===1){
     let version = stixLangV2_1;
   }
   return version;
+
 }
