@@ -13,10 +13,12 @@ const AddFields = () => {
 
   return (
     <>
+      <div>
+          <ChangeVersion setField={setField}/>
+      </div>
       <div className="bx--row">
         <div className="bx--col">
-            <ChangeVersion setField={setField}/>
-          <h4 className="section-title">Select Fields</h4>
+          <h4 className="section-title-first">Select Fields</h4>
         </div>
       </div>
 
