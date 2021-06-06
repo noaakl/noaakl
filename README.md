@@ -28,6 +28,7 @@ MMS is a static client side app, there is no backend involved, except from servi
 
 ### Authors
 - [Bar Haim](https://github.com/barvhaim)
+- [Ido Hersko](https://github.com/idohersko)
 
 ### Licensing
 
