@@ -70,9 +70,9 @@ export function filterMappingFieldsForValue(mappings, value) {
 }
 
 
-export function updateVersionOfStix(stixversion){
+export function updateVersionOfStix(stixVersion){
   let version = stixLangV2;
-  if(stixversion==="stix_version_2_1"){
+  if(stixVersion==="stix_version_2_1"){
     version = stixLangV2_1;
   }
   return version;
