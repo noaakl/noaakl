@@ -127,7 +127,7 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
     case CHANGE_STIX_VERSION:{
       return{
         ...state,
-        stixFields: updateVersionOfStix(action.payload.number),
+        stixFields: updateVersionOfStix(action.payload.version),
 
       };
     }

@@ -20,6 +20,7 @@ const stixVersionsList = [
 
 
 const ChangeVersion = (props) => {
+    /*const stixVersion = useSelector((state) => state.fromStix.stixFields)*/
     const dispatch = useDispatch();
     return (
         <div>
