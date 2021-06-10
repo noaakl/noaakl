@@ -92,11 +92,11 @@ export function clearMappings() {
   };
 }
 
-export function changeStixVersion(stixversion){
+export function changeStixVersion(stixVersion){
   return{
     type:CHANGE_STIX_VERSION,
     payload:{
-      version : stixversion
+      version : stixVersion
     }
   };
 }

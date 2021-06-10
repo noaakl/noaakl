@@ -1,11 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {Dropdown} from "carbon-components-react";
 import {changeStixVersion} from "../../store/actions/from_stix";
-
-import stixLangV2 from "../../global/stixLangV2";
-import stixLangV2_1 from "../../global/stixLangV2_1";
-
 
 const stixVersionsList = [
     {
@@ -19,8 +15,7 @@ const stixVersionsList = [
 ];
 
 
-const ChangeVersion = (props) => {
-    /*const stixVersion = useSelector((state) => state.fromStix.stixFields)*/
+const ChangeVersion = () => {
     const dispatch = useDispatch();
     return (
         <div>
@@ -29,7 +24,7 @@ const ChangeVersion = (props) => {
             label="STIX version 2.0"
             id="carbon-dropdown-version-of-stix"
             items={stixVersionsList}
-            onChange={(event) => { dispatch(changeStixVersion(event.selectedItem.id)); props.setField(event.selectedItem.id==="stix_version_2_1"? stixLangV2_1: stixLangV2)}}
+            onChange={(event) => { dispatch(changeStixVersion(event.selectedItem.id));}}
         />
         </div>
     );
