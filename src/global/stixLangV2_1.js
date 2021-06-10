@@ -208,7 +208,7 @@ const stixLanguageV2_1 = [
         ],
     },
     {
-        title: "TESTWindows™ Registry Key",
+        title: "Windows™ Registry Key",
         type: "windows-registry-key",
         items: [
             { name: "key", required: false },

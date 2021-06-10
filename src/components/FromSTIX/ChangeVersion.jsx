@@ -5,46 +5,31 @@ import {changeStixVersion} from "../../store/actions/from_stix";
 
 import stixLangV2 from "../../global/stixLangV2";
 import stixLangV2_1 from "../../global/stixLangV2_1";
-import "./ChangeVersion.css"
 
-const itemstest = [
+
+const stixVersionsList = [
     {
-        id: 0,
+        id: "stix_version_2_0",
         label: 'STIX version 2.0',
     },
     {
-        id: 1,
+        id: "stix_version_2_1",
         label: 'STIX version 2.1',
-
     }
 ];
 
-function title(){
-    return<div>
-        <ul className="change-title">
-            <li>Please select a STIX version</li>
-            <li>The default version is 2.0</li>
-        </ul>
-    </div>
 
-}
 const ChangeVersion = (props) => {
     const dispatch = useDispatch();
-    const stixVersion = useSelector((state) => state.fromStix.stixFields);
     return (
         <div>
         <Dropdown
-
             ariaLabel="Dropdown"
-            label="Please select a STIX version"
+            label="STIX version 2.0"
             id="carbon-dropdown-version-of-stix"
-            titleText= {title()}
-
-            items={itemstest}
-            onChange={(event) => {dispatch(changeStixVersion(event.selectedItem.id));/*{console.log(stixVersion)}; */props.setField(event.selectedItem.id===1? stixLangV2_1: stixLangV2)}}
-
+            items={stixVersionsList}
+            onChange={(event) => { dispatch(changeStixVersion(event.selectedItem.id)); props.setField(event.selectedItem.id==="stix_version_2_1"? stixLangV2_1: stixLangV2)}}
         />
-
         </div>
     );
 }

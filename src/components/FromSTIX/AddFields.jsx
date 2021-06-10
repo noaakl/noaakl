@@ -8,13 +8,14 @@ import ChangeVersion from "./ChangeVersion";
 
 
 const AddFields = () => {
-  const [stixFields, setField] = React.useState(useSelector((state) => state.fromStix.stixFields));
+  const [stixFields, setFields] = React.useState(useSelector((state) => state.fromStix.stixFields));
 
 
   return (
     <>
       <div>
-          <ChangeVersion setField={setField}/>
+          <ChangeVersion setField={setFields}/>
+
       </div>
       <div className="bx--row">
         <div className="bx--col">
