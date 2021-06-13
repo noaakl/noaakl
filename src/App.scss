@@ -15,11 +15,6 @@ body {
   margin-bottom: $spacing-04;
 }
 
-.section-title-first {
-  @include carbon--type-style("productive-heading-01");
-  margin-bottom: $spacing-03;
-  margin-top: $spacing-07;
-}
 .section-title {
   @include carbon--type-style("productive-heading-01");
   margin-bottom: $spacing-03;

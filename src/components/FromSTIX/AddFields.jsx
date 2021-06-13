@@ -10,12 +10,15 @@ const AddFields = () => {
   const stixFields = useSelector((state) => state.fromStix.stixFields);
   return (
     <>
-      <div>
-        <ChangeVersion />
-      </div>
       <div className="bx--row">
         <div className="bx--col">
-          <h4 className="section-title-first">Select Fields</h4>
+          <h4 className="section-title">Select Fields</h4>
+        </div>
+      </div>
+
+      <div className="bx--row">
+        <div className="bx--col">
+          <ChangeVersion />
         </div>
       </div>
 
