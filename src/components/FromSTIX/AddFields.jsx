@@ -6,14 +6,12 @@ import AddFieldItems from "./AddFieldItems";
 import FieldSearchBar from "./FieldSearchBar";
 import ChangeVersion from "./ChangeVersion";
 
-
 const AddFields = () => {
   const stixFields = useSelector((state) => state.fromStix.stixFields);
   return (
     <>
       <div>
-          <ChangeVersion/>
-
+        <ChangeVersion />
       </div>
       <div className="bx--row">
         <div className="bx--col">

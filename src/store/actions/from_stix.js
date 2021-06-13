@@ -8,7 +8,7 @@ export const UPDATE_MAPPINGS_FROM_FILE = "UPDATE_MAPPINGS_FROM_FILE";
 export const UPDATE_MAPPINGS_FILTER_FIELD_VALUE =
   "UPDATE_MAPPINGS_FILTER_FIELD_VALUE";
 export const CLEAR_MAPPINGS = "CLEAR_MAPPINGS";
-export const CHANGE_STIX_VERSION ="CHANGE_STIX_VERSION";
+export const CHANGE_STIX_VERSION = "CHANGE_STIX_VERSION";
 
 export function addField(type, key) {
   return {
@@ -92,11 +92,11 @@ export function clearMappings() {
   };
 }
 
-export function changeStixVersion(stixVersion){
-  return{
-    type:CHANGE_STIX_VERSION,
-    payload:{
-      version : stixVersion
-    }
+export function changeStixVersion(stixVersion) {
+  return {
+    type: CHANGE_STIX_VERSION,
+    payload: {
+      version: stixVersion,
+    },
   };
 }

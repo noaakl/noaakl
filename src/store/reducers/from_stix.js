@@ -12,14 +12,17 @@ import {
   CHANGE_STIX_VERSION,
 } from "../actions/from_stix";
 import stixLanguageV2 from "../../global/stixLangV2";
-import { filterFieldsForValue, updateVersionOfStix } from "../../components/FromSTIX/utils";
+import {
+  filterFieldsForValue,
+  updateVersionOfStix,
+} from "../../components/FromSTIX/utils";
 
 const INITIAL_STATE = {
   mapping: {},
   stixFields: stixLanguageV2,
   fieldSearch: "",
   fieldMappingFilter: "",
-  num:0,
+  num: 0,
 };
 
 const FromSTIXReducer = (state = INITIAL_STATE, action) => {
@@ -83,12 +86,11 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
           ...state,
           mapping: {
             ...state.mapping,
-            [action.payload.field]: state.mapping[
-              action.payload.field
-            ].map((o) =>
-              o.id === action.payload.id
-                ? { ...o, value: action.payload.value }
-                : o
+            [action.payload.field]: state.mapping[action.payload.field].map(
+              (o) =>
+                o.id === action.payload.id
+                  ? { ...o, value: action.payload.value }
+                  : o
             ),
           },
         };
@@ -124,11 +126,10 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
         mapping: {},
       };
     }
-    case CHANGE_STIX_VERSION:{
-      return{
+    case CHANGE_STIX_VERSION: {
+      return {
         ...state,
         stixFields: updateVersionOfStix(action.payload.version),
-
       };
     }
 
