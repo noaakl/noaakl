@@ -9,15 +9,19 @@ import {
   UPDATE_MAPPINGS_FROM_FILE,
   UPDATE_MAPPINGS_FILTER_FIELD_VALUE,
   CLEAR_MAPPINGS,
+  CHANGE_STIX_VERSION,
 } from "../actions/from_stix";
-import stixLanguageV2 from "../../global/stixLangV2";
+import stixLanguageV2_0 from "../../global/stixLangV2";
+import stixLanguageV2_1 from "../../global/stixLangV2_1";
 import { filterFieldsForValue } from "../../components/FromSTIX/utils";
+import { STIX_VERSION } from "../../global/constants";
 
 const INITIAL_STATE = {
   mapping: {},
-  stixFields: stixLanguageV2,
+  stixFields: stixLanguageV2_0,
   fieldSearch: "",
   fieldMappingFilter: "",
+  stixVersion: STIX_VERSION.V_2_0,
 };
 
 const FromSTIXReducer = (state = INITIAL_STATE, action) => {
@@ -81,12 +85,11 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
           ...state,
           mapping: {
             ...state.mapping,
-            [action.payload.field]: state.mapping[
-              action.payload.field
-            ].map((o) =>
-              o.id === action.payload.id
-                ? { ...o, value: action.payload.value }
-                : o
+            [action.payload.field]: state.mapping[action.payload.field].map(
+              (o) =>
+                o.id === action.payload.id
+                  ? { ...o, value: action.payload.value }
+                  : o
             ),
           },
         };
@@ -95,11 +98,38 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
     }
 
     case UPDATE_SEARCH_FIELD_VALUE: {
-      return {
-        ...state,
-        fieldSearch: action.payload.value,
-        stixFields: filterFieldsForValue(stixLanguageV2, action.payload.value),
-      };
+      switch (state.stixVersion) {
+        case STIX_VERSION.V_2_0: {
+          return {
+            ...state,
+            fieldSearch: action.payload.value,
+            stixFields: filterFieldsForValue(
+              stixLanguageV2_0,
+              action.payload.value
+            ),
+          };
+        }
+        case STIX_VERSION.V_2_1: {
+          return {
+            ...state,
+            fieldSearch: action.payload.value,
+            stixFields: filterFieldsForValue(
+              stixLanguageV2_1,
+              action.payload.value
+            ),
+          };
+        }
+        default: {
+          return {
+            ...state,
+            fieldSearch: action.payload.value,
+            stixFields: filterFieldsForValue(
+              stixLanguageV2_0,
+              action.payload.value
+            ),
+          };
+        }
+      }
     }
 
     case UPDATE_MAPPINGS_FILTER_FIELD_VALUE: {
@@ -121,6 +151,29 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
         ...state,
         mapping: {},
       };
+    }
+    case CHANGE_STIX_VERSION: {
+      switch (action.payload.version) {
+        case STIX_VERSION.V_2_0: {
+          return {
+            ...state,
+            fieldSearch: "",
+            stixVersion: action.payload.version,
+            stixFields: stixLanguageV2_0,
+          };
+        }
+        case STIX_VERSION.V_2_1: {
+          return {
+            ...state,
+            fieldSearch: "",
+            stixVersion: action.payload.version,
+            stixFields: stixLanguageV2_1,
+          };
+        }
+        default: {
+          return state;
+        }
+      }
     }
 
     default:

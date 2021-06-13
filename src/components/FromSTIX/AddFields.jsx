@@ -4,15 +4,21 @@ import { useSelector } from "react-redux";
 import styles from "./from_stix.module.scss";
 import AddFieldItems from "./AddFieldItems";
 import FieldSearchBar from "./FieldSearchBar";
+import ChangeVersion from "./ChangeVersion";
 
 const AddFields = () => {
   const stixFields = useSelector((state) => state.fromStix.stixFields);
-
   return (
     <>
       <div className="bx--row">
         <div className="bx--col">
           <h4 className="section-title">Select Fields</h4>
+        </div>
+      </div>
+
+      <div className="bx--row">
+        <div className="bx--col">
+          <ChangeVersion />
         </div>
       </div>
 
