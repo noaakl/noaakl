@@ -24,7 +24,7 @@ const INITIAL_STATE = {
   fieldSearch: "",
   fieldMappingFilter: "",
   stixVersion: STIX_VERSION.V_2_0,
-  modalShow: false,
+  customFieldModalShow: false,
 };
 
 const FromSTIXReducer = (state = INITIAL_STATE, action) => {
@@ -182,14 +182,14 @@ const FromSTIXReducer = (state = INITIAL_STATE, action) => {
     case SHOW_CUSTOM_FIELD_MODAL: {
       return {
         ...state,
-        modalShow: true,
+        customFieldModalShow: true,
       };
     }
 
     case CLOSE_CUSTOM_FIELD_MODAL: {
       return {
         ...state,
-        modalShow: false,
+        customFieldModalShow: false,
       };
     }
 

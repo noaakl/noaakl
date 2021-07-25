@@ -2,19 +2,16 @@ import React, { useState } from "react";
 import { Modal, TextInput } from "carbon-components-react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeCustomFieldModal, addField } from "../../store/actions/from_stix";
+import { isValidCustomStixField } from "../../global/stixHelper";
 
 const CustomFieldModal = () => {
-  const modalShow = useSelector((state) => state.fromStix.modalShow);
+  const customFieldModalShow = useSelector((state) => state.fromStix.customFieldModalShow);
   const dispatch = useDispatch();
   const [customField, setCustomField] = useState("");
-  const isValidCustomField = (customField) => {
-    const re = /(^\S+:+\S+$)/;
-    return re.test(customField);
-  };
 
   return (
     <Modal
-      open={modalShow}
+      open={customFieldModalShow}
       size="xs"
       modalHeading={"Add custom field"}
       primaryButtonText={"Add"}
@@ -29,8 +26,8 @@ const CustomFieldModal = () => {
         setCustomField("");
         dispatch(closeCustomFieldModal());
       }}
-      primaryButtonDisabled={!isValidCustomField(customField)}
-      preventCloseOnClickOutside={true}
+      primaryButtonDisabled={!isValidCustomStixField(customField)}
+    //   preventCloseOnClickOutside={false}
       shouldSubmitOnEnter={true}
       hasForm={true}
     >
@@ -41,7 +38,7 @@ const CustomFieldModal = () => {
         onChange={(e) => {
           setCustomField(e.target.value);
         }}
-        invalid={customField !== "" && !isValidCustomField(customField)}
+        invalid={customField !== "" && !isValidCustomStixField(customField)}
         invalidText="A valid value is required"
       />
     </Modal>
